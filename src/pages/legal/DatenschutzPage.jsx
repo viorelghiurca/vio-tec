@@ -48,7 +48,7 @@ export default function DatenschutzPage() {
               <LegalSection title="2. Welche Daten wir erheben">
                 <p className="mb-3">Wir erheben und verarbeiten folgende personenbezogene Daten:</p>
                 <ul className="list-disc list-inside space-y-1 text-neutral-600">
-                  <li>Kontaktformular: Name, Firma (optional), E-Mail, Telefon (optional), Betreff, Nachricht</li>
+                  <li>Kontaktformular: Name, Firma (optional), E-Mail, Telefon (optional), Art des Anliegens, Dringlichkeit (optional), Nachricht</li>
                   <li>Technische Daten: IP-Adresse (anonymisiert), Browser-Typ (durch den Hosting-Anbieter)</li>
                   <li>Analysedaten (optional, nach Einwilligung): anonymisierte Nutzungsstatistiken</li>
                 </ul>

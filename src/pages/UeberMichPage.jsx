@@ -8,15 +8,15 @@ import SEOHead from '../components/ui/SEOHead'
 import BgImage from '../components/ui/BgImage'
 
 const skills = [
-  { name: 'KI-Automatisierung & Workflows', icon: <Bot className="w-4 h-4" /> },
-  { name: 'Web-Entwicklung (React, Vite, Tailwind)', icon: <Code2 className="w-4 h-4" /> },
-  { name: 'Website-Erstellung & SEO', icon: <Globe className="w-4 h-4" /> },
-  { name: 'Systemadministration (Windows/Linux)', icon: <Server className="w-4 h-4" /> },
-  { name: 'Hardware- & Software-Betreuung', icon: <Wrench className="w-4 h-4" /> },
-  { name: 'DevOps & Cloud-Grundlagen', icon: <Code2 className="w-4 h-4" /> },
-  { name: 'IT-Support für Unternehmen', icon: <Users className="w-4 h-4" /> },
-  { name: 'Digitalisierung & Prozessoptimierung', icon: <Lightbulb className="w-4 h-4" /> },
-  { name: 'Projektmanagement', icon: <CheckCircle2 className="w-4 h-4" /> },
+  { name: 'Individuelle Softwareentwicklung', icon: <Code2 className="w-4 h-4" /> },
+  { name: 'Prozess- & Skript-Automatisierung', icon: <Bot className="w-4 h-4" /> },
+  { name: 'Schnittstellen & APIs (REST, Datenimport/-export)', icon: <Globe className="w-4 h-4" /> },
+  { name: 'Webentwicklung', icon: <Code2 className="w-4 h-4" /> },
+  { name: 'Datenbanken & Datenverarbeitung', icon: <Lightbulb className="w-4 h-4" /> },
+  { name: 'Systemadministration', icon: <Server className="w-4 h-4" /> },
+  { name: 'Server, Netzwerk & Hardware', icon: <Wrench className="w-4 h-4" /> },
+  { name: 'Technische Fehleranalyse', icon: <CheckCircle2 className="w-4 h-4" /> },
+  { name: 'IT-Unterstützung für Unternehmen', icon: <Users className="w-4 h-4" /> },
 ]
 
 const values = [
@@ -46,8 +46,8 @@ export default function UeberMichPage() {
   return (
     <>
       <SEOHead
-        title="Über mich – Viorel Ghiurca, IHK-Fachinformatiker"
-        description="Viorel Ghiurca – IHK-geprüfter Fachinformatiker und Gründer von VIO-IT. Experte für KI-Automatisierung, Webentwicklung und IT-Support für KMU in Deutschland."
+        title="Über mich – Viorel Ghiurca, IHK-geprüfter Fachinformatiker"
+        description="Viorel Ghiurca – IHK-geprüfter Fachinformatiker und Gründer von VIO-IT. Individuelle Softwareentwicklung, Automatisierung, Schnittstellen und IT-Lösungen für kleine und mittlere Unternehmen."
         canonical="/ueber-mich"
       />
 
@@ -100,25 +100,23 @@ export default function UeberMichPage() {
               </div>
 
               <h2 className="text-3xl font-bold text-neutral-900 mb-6 tracking-tight">
-                IT mit Leidenschaft und Expertise
+                Persönlicher Ansprechpartner statt anonymer Agentur
               </h2>
 
               <div className="space-y-4 text-neutral-600 leading-relaxed">
                 <p>
                   Ich bin Viorel Ghiurca — IHK-geprüfter Fachinformatiker und Gründer von VIO-IT.
-                  Mit fundierter Ausbildung und praktischer Erfahrung in verschiedenen IT-Bereichen
-                  helfe ich kleinen und mittelständischen Unternehmen dabei, die Chancen der
-                  Digitalisierung wirklich zu nutzen.
+                  Ich entwickle individuelle Software, automatisiere wiederkehrende Prozesse und
+                  löse technische Probleme für kleine und mittlere Unternehmen.
                 </p>
                 <p>
-                  Meine Überzeugung: Gute IT ist kein Luxus für Großunternehmen. Auch kleine Betriebe
-                  verdienen moderne, zuverlässige und effiziente digitale Lösungen — zu fairen Preisen
-                  und mit persönlichem Service.
+                  Bei VIO-IT sprechen Sie direkt mit der Person, die Ihre Lösung auch umsetzt.
+                  Keine Projektmanager dazwischen, keine wechselnden Ansprechpartner — dafür kurze
+                  Wege, klare Aussagen und Lösungen, die zu Ihrem Betrieb passen.
                 </p>
                 <p>
-                  Bei VIO-IT arbeite ich stets auf Augenhöhe mit meinen Kunden. Ich erkläre komplexe
-                  Themen verständlich, denke unternehmerisch mit und liefere Ergebnisse, die messbar
-                  Mehrwert schaffen.
+                  Ich erkläre komplexe Themen verständlich, sage ehrlich, was sinnvoll ist und was
+                  nicht, und liefere Ergebnisse, die im Arbeitsalltag tatsächlich helfen.
                 </p>
               </div>
 
@@ -131,7 +129,7 @@ export default function UeberMichPage() {
               </div>
 
               <Link to="/kontakt" className="btn-primary btn-lg mt-8">
-                Jetzt Erstgespräch vereinbaren
+                Projekt besprechen
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </AnimatedSection>
@@ -196,16 +194,17 @@ export default function UeberMichPage() {
         <div className="section-container text-center relative z-10">
           <AnimatedSection>
             <h2 className="text-3xl font-bold text-white mb-4">
-              Überzeugt? Lassen Sie uns sprechen.
+              Wobei kann ich Sie unterstützen?
             </h2>
             <p className="text-primary-200 mb-8 max-w-xl mx-auto">
-              Kostenloses und unverbindliches Erstgespräch — ich freue mich auf Ihre Herausforderung.
+              Beschreiben Sie kurz, was Sie benötigen — Sie erhalten eine kostenlose,
+              unverbindliche erste Einschätzung.
             </p>
             <Link
               to="/kontakt"
               className="inline-flex items-center gap-2 px-8 py-4 text-primary-700 bg-white font-semibold rounded-xl hover:bg-primary-50 transition-colors shadow-lg"
             >
-              Nachricht senden
+              Kostenlose erste Einschätzung
               <ArrowRight className="w-5 h-5" />
             </Link>
           </AnimatedSection>

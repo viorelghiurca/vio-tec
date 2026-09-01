@@ -1,10 +1,8 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import {
-  Bot, Globe, Server, Headphones, TrendingUp,
-  CheckCircle2, ArrowRight, Zap, Timer, BarChart3,
-  Smartphone, Search, ShoppingCart, Wifi, Monitor,
-  Users, Cpu, FileText, BarChart2, Settings
+  Code2, Workflow, Cable, Globe, Wrench,
+  CheckCircle2, ArrowRight
 } from 'lucide-react'
 import AnimatedSection from '../components/ui/AnimatedSection'
 import SEOHead from '../components/ui/SEOHead'
@@ -59,7 +57,7 @@ function ServiceBlock({ id, icon, gradient, title, tagline, problem, solution, b
           )}
           <div className="bg-neutral-50 rounded-3xl p-8">
             <h3 className="text-sm font-semibold text-neutral-500 uppercase tracking-wide mb-5">
-              Das bringt es Ihnen
+              Typische Einsatzbereiche
             </h3>
             <ul className="space-y-4">
               {benefits.map((b, i) => (
@@ -81,93 +79,98 @@ function ServiceBlock({ id, icon, gradient, title, tagline, problem, solution, b
 
 const serviceData = [
   {
-    id: 'ki-automatisierung',
-    icon: <Bot className="w-8 h-8" />,
+    id: 'softwareentwicklung',
+    icon: <Code2 className="w-8 h-8" />,
     gradient: 'from-violet-500 to-primary-600',
-    title: 'KI-Automatisierung',
-    tagline: 'Effizienz steigern',
-    image: '/images/ki-automatisierung.jpg',
-    imageAlt: 'Künstliche Intelligenz und Automatisierung – Roboter-Technologie',
-    problem: 'Viele Unternehmen verbringen täglich Stunden mit wiederholenden Aufgaben: E-Mails sortieren, Daten erfassen, Berichte erstellen, Kundenkommunikation managen. Das kostet Zeit, Geld und Nerven — und lässt sich größtenteils automatisieren.',
-    solution: 'Mit maßgeschneiderten KI-gestützten Workflows automatisiere ich Ihre Geschäftsprozesse. Von einfachen Automatisierungen bis hin zu komplexen KI-Lösungen — so dass Ihr Team sich auf wertschöpfende Aufgaben konzentrieren kann.',
+    title: 'Softwareentwicklung',
+    tagline: 'Individuelle Anwendungen',
+    image: '/images/profil-arbeitsplatz.jpg',
+    imageAlt: 'Softwareentwicklung – Entwickler bei der Arbeit am Computer',
+    problem: 'Standardsoftware passt oft nicht zu den tatsächlichen Arbeitsabläufen. Es fehlen Funktionen, Daten werden doppelt gepflegt oder wichtige Schritte laufen weiterhin manuell nebenher.',
+    solution: 'Ich entwickle individuelle Anwendungen und interne Firmenlösungen, die zu Ihren Arbeitsabläufen und Anforderungen passen — vom kleinen Werkzeug bis zur Datenbankanwendung.',
+    cta: 'Projekt besprechen',
     benefits: [
-      { title: 'Bis zu 40% Zeitersparnis bei Routineaufgaben', desc: 'Mehr Zeit für das Wesentliche' },
-      { title: 'Fehlerreduktion durch automatisierte Prozesse', desc: 'Konsistente, zuverlässige Ergebnisse' },
-      { title: 'Skalierbare Lösungen die mitwachsen', desc: 'Kein Mehraufwand bei mehr Aufträgen' },
-      { title: 'Individuelle Anpassung an Ihr Unternehmen', desc: 'Keine Standardlösung – alles maßgeschneidert' },
-      { title: 'Integration in bestehende Tools und Systeme', desc: 'Nahtlose Verbindung mit Ihrer Software' },
+      { title: 'Individuelle Desktop-Anwendungen', desc: 'Zugeschnitten auf Ihre Arbeitsweise' },
+      { title: 'Interne Firmenanwendungen', desc: 'Werkzeuge für Ihr Team statt Insellösungen' },
+      { title: 'Kleine Webanwendungen', desc: 'Im Browser nutzbar, ohne Installation' },
+      { title: 'Datenbankanwendungen', desc: 'Daten strukturiert erfassen und auswerten' },
+      { title: 'Individuelle Tools', desc: 'Gezielte Lösungen für konkrete Aufgaben' },
     ],
   },
   {
-    id: 'website-erstellung',
+    id: 'automatisierung',
+    icon: <Workflow className="w-8 h-8" />,
+    gradient: 'from-emerald-500 to-teal-600',
+    title: 'Automatisierung',
+    tagline: 'Manuelle Arbeit reduzieren',
+    image: '/images/ki-automatisierung.jpg',
+    imageAlt: 'Automatisierung von Prozessen und Arbeitsabläufen',
+    problem: 'Wiederkehrende Aufgaben wie Excel-Pflege, Dateiverarbeitung oder das Erstellen von Reports kosten jede Woche Arbeitszeit — und manuelle Schritte sind fehleranfällig.',
+    solution: 'Ich automatisiere Excel, Dateien, Datenbanken und wiederkehrende Arbeitsabläufe, sodass manuelle Arbeit spürbar sinkt. Wo es sinnvoll ist, setze ich dabei auch KI als Werkzeug ein.',
+    cta: 'Prozess automatisieren',
+    benefits: [
+      { title: 'Excel-Automatisierung', desc: 'Auswertungen und Tabellen ohne Handarbeit' },
+      { title: 'Datei- und Dokumentenverarbeitung', desc: 'Automatisch sortieren, umbenennen, verarbeiten' },
+      { title: 'Datenverarbeitung', desc: 'Daten zusammenführen, bereinigen, aufbereiten' },
+      { title: 'PowerShell- und Skript-Automatisierung', desc: 'Wiederkehrende Aufgaben zuverlässig ausführen' },
+      { title: 'Automatisierte Reports', desc: 'Berichte erstellen sich auf Knopfdruck oder nach Zeitplan' },
+    ],
+  },
+  {
+    id: 'schnittstellen-apis',
+    icon: <Cable className="w-8 h-8" />,
+    gradient: 'from-orange-500 to-amber-600',
+    title: 'Schnittstellen & APIs',
+    tagline: 'Systeme verbinden',
+    image: '/images/digitalisierung.jpg',
+    imageAlt: 'Schnittstellen und Datenaustausch zwischen Systemen',
+    problem: 'Viele Unternehmen nutzen mehrere Programme, die nicht miteinander sprechen. Daten werden per Hand von einem System ins andere übertragen — doppelt, langsam und fehleranfällig.',
+    solution: 'Ich verbinde bestehende Systeme miteinander und sorge dafür, dass Daten automatisiert zwischen Ihren Anwendungen ausgetauscht werden — über Standard-APIs oder individuelle Schnittstellen.',
+    cta: 'Schnittstelle anfragen',
+    benefits: [
+      { title: 'REST APIs', desc: 'Entwicklung und Anbindung moderner Schnittstellen' },
+      { title: 'API-Anbindungen', desc: 'Externe Dienste in Ihre Abläufe integrieren' },
+      { title: 'Datenimport und -export', desc: 'Daten automatisiert übernehmen und bereitstellen' },
+      { title: 'Verbindung verschiedener Softwaresysteme', desc: 'Schluss mit doppelter Datenpflege' },
+      { title: 'Individuelle Schnittstellen', desc: 'Auch wenn keine Standard-API existiert' },
+    ],
+  },
+  {
+    id: 'webentwicklung',
     icon: <Globe className="w-8 h-8" />,
     gradient: 'from-primary-500 to-cyan-600',
-    title: 'Website-Erstellung',
-    tagline: 'Online präsent sein',
+    title: 'Webentwicklung',
+    tagline: 'Websites & Webanwendungen',
     image: '/images/webentwicklung.jpg',
     imageAlt: 'Professionelle Webentwicklung – Code auf dem Bildschirm',
-    problem: 'Eine veraltete oder nicht vorhandene Website kostet täglich potenzielle Kunden. In der digitalen Welt ist Ihre Website oft der erste Eindruck — und der entscheidet, ob jemand Kunde wird oder zur Konkurrenz geht.',
-    solution: 'Ich erstelle moderne, schnelle und conversion-optimierte Unternehmenswebsites, die auf Google gefunden werden und Besucher in Kunden verwandeln. Von der Konzeption über das Design bis zur Veröffentlichung — alles aus einer Hand.',
+    problem: 'Eine veraltete Website oder fehlende Weblösung kostet potenzielle Kunden. Und wenn interne Abläufe nur am einzelnen Rechner funktionieren, fehlt oft eine Anwendung, die das Team im Browser nutzen kann.',
+    solution: 'Ich entwickle moderne Unternehmenswebsites und individuelle Webanwendungen für unterschiedliche Anforderungen — von der neuen Website bis zur Erweiterung bestehender Seiten.',
+    cta: 'Website besprechen',
     benefits: [
-      { title: 'Professionelles Design mit eigenem Branding', desc: 'Wiedererkennbar und vertrauenswürdig' },
-      { title: 'Vollständig responsive für alle Geräte', desc: 'Smartphone, Tablet und Desktop' },
-      { title: 'SEO-Grundoptimierung von Anfang an', desc: 'Besser bei Google gefunden werden' },
-      { title: 'Schnelle Ladezeiten (Core Web Vitals)', desc: 'Bessere Rankings und User Experience' },
-      { title: 'Conversion-optimierte CTAs und Struktur', desc: 'Mehr Anfragen durch clevere Nutzerführung' },
+      { title: 'Unternehmenswebsites', desc: 'Professioneller Auftritt mit klarer Struktur' },
+      { title: 'Individuelle Webanwendungen', desc: 'Browser-basierte Lösungen für Ihr Team' },
+      { title: 'Responsive Webentwicklung', desc: 'Funktioniert auf Smartphone, Tablet und Desktop' },
+      { title: 'Bestehende Websites erweitern', desc: 'Neue Funktionen statt teurem Neubau' },
+      { title: 'SEO-Grundlagen von Anfang an', desc: 'Saubere Technik, damit Sie gefunden werden' },
     ],
   },
   {
-    id: 'hardware-software',
-    icon: <Server className="w-8 h-8" />,
-    gradient: 'from-emerald-500 to-teal-600',
-    title: 'Hardware & Software Betreuung',
-    tagline: 'IT-Infrastruktur',
-    image: '/images/server-raum.jpg',
-    imageAlt: 'Server-Racks im modernen Rechenzentrum',
-    problem: 'IT-Probleme kosten Unternehmen Zeit und Geld. Wenn Rechner langsam laufen, Software nicht richtig konfiguriert ist oder Geräte ausfallen, leidet die Produktivität — und meist gibt es niemanden, der schnell und kompetent hilft.',
-    solution: 'Ich übernehme die vollständige Betreuung Ihrer Hard- und Software: Einrichtung neuer Arbeitsplätze, Wartung bestehender Systeme, Software-Updates und -konfiguration sowie Beratung bei IT-Anschaffungen.',
-    benefits: [
-      { title: 'Professionelle Einrichtung neuer Arbeitsplätze', desc: 'Alles startklar vom ersten Tag an' },
-      { title: 'Regelmäßige Wartung und Updates', desc: 'Stabiler und sicherer IT-Betrieb' },
-      { title: 'Beratung bei Hard- und Softwarekauf', desc: 'Das Richtige zum fairen Preis' },
-      { title: 'Datensicherung und Backup-Konzepte', desc: 'Ihre Daten sind sicher' },
-      { title: 'Lizenzverwaltung und Softwarepflege', desc: 'Immer compliant und aktuell' },
-    ],
-  },
-  {
-    id: 'it-support',
-    icon: <Headphones className="w-8 h-8" />,
-    gradient: 'from-orange-500 to-amber-600',
-    title: 'IT-Support & Systemadministration',
-    tagline: 'Zuverlässige Betreuung',
-    image: '/images/it-support.jpg',
-    imageAlt: 'Professioneller IT-Support mit Headset',
-    problem: 'IT-Probleme passieren immer zum ungünstigsten Zeitpunkt. Ohne kompetenten Ansprechpartner verlieren Mitarbeiter produktive Stunden bei der Fehlersuche — oder warten tagelang auf Hilfe.',
-    solution: 'Als externer IT-Administrator stehe ich Ihnen schnell zur Seite: remote oder vor Ort. Von Windows- und Linux-Systemen über Netzwerke bis hin zur Benutzerverwaltung — ich halte Ihre IT am Laufen.',
-    benefits: [
-      { title: 'Schnelle Reaktion bei IT-Problemen', desc: 'Remote-Support in kurzer Zeit' },
-      { title: 'Windows und Linux Administration', desc: 'Expertise auf beiden Plattformen' },
-      { title: 'Netzwerkkonfiguration und -wartung', desc: 'Stabile und sichere Netzwerke' },
-      { title: 'Benutzerverwaltung und Rechtevergabe', desc: 'Sicher und geordnet' },
-      { title: 'Proaktive Überwachung statt Feuerwehr', desc: 'Probleme erkennen bevor sie entstehen' },
-    ],
-  },
-  {
-    id: 'digitalisierung',
-    icon: <TrendingUp className="w-8 h-8" />,
+    id: 'it-loesungen',
+    icon: <Wrench className="w-8 h-8" />,
     gradient: 'from-pink-500 to-rose-600',
-    title: 'Digitalisierung & Prozessoptimierung',
-    tagline: 'Modernisierung',
-    image: '/images/digitalisierung.jpg',
-    imageAlt: 'Prozessplanung und Strategieentwicklung am Whiteboard',
-    problem: 'Viele Unternehmen arbeiten noch mit veralteten, manuellen Prozessen. Excel-Tabellen, Papierdokumente, fehlende Automatisierung — das kostet täglich Zeit und verhindert weiteres Wachstum.',
-    solution: 'Ich analysiere Ihre bestehenden Abläufe, identifiziere Optimierungspotenziale und entwickle digitale Lösungen, die wirklich helfen. Dabei setze ich auf moderne Tools, die Ihr Team schnell annehmen kann.',
+    title: 'IT-Lösungen',
+    tagline: 'Technische Unterstützung',
+    image: '/images/it-support.jpg',
+    imageAlt: 'Technische IT-Unterstützung und Fehleranalyse',
+    problem: 'Technische Probleme mit Servern, Netzwerk oder Hardware kosten Zeit und Nerven — besonders, wenn kein kompetenter Ansprechpartner greifbar ist.',
+    solution: 'Ich unterstütze Sie bei Linux, Servern, Netzwerken, Hardware und individuellen IT-Problemen — mit strukturierter Fehleranalyse und Lösungen, die zu Ihrer Umgebung passen.',
+    cta: 'IT-Problem schildern',
     benefits: [
-      { title: 'Systematische Prozessanalyse', desc: 'Klares Bild über Stärken und Schwächen' },
-      { title: 'Individuelle digitale Lösungskonzepte', desc: 'Passend zu Ihrem Unternehmen' },
-      { title: 'Integration moderner Software und Tools', desc: 'Das Beste aus der aktuellen Tech-Welt' },
-      { title: 'Mitarbeiterschulung und Onboarding', desc: 'Akzeptanz von Anfang an' },
-      { title: 'Messbare Ergebnisse und ROI', desc: 'Sie sehen, was die Digitalisierung bringt' },
+      { title: 'Linux und Server', desc: 'Einrichtung, Wartung und Fehlerbehebung' },
+      { title: 'Netzwerk', desc: 'Stabile und nachvollziehbare Konfiguration' },
+      { title: 'Hardware', desc: 'Beratung, Einrichtung und Problemlösung' },
+      { title: 'Technische Fehleranalyse', desc: 'Ursachen finden statt Symptome behandeln' },
+      { title: 'Individuelle technische Lösungen', desc: 'Auch für Probleme abseits des Standards' },
     ],
   },
 ]
@@ -189,8 +192,8 @@ export default function LeistungenPage() {
   return (
     <>
       <SEOHead
-        title="Leistungen – KI-Automatisierung, Website-Erstellung, IT-Support"
-        description="VIO-IT Leistungen: KI-Automatisierung, professionelle Websites, Hardware & Software Betreuung, IT-Support und Digitalisierung für KMU in Deutschland."
+        title="Leistungen – Softwareentwicklung, Automatisierung, APIs & IT-Lösungen"
+        description="VIO-IT Leistungen: Individuelle Softwareentwicklung, Prozessautomatisierung, Schnittstellen & APIs, Webentwicklung und IT-Lösungen für kleine und mittlere Unternehmen."
         canonical="/leistungen"
       />
 
@@ -201,10 +204,11 @@ export default function LeistungenPage() {
           <AnimatedSection>
             <span className="badge bg-white/10 text-primary-200 mb-4">Leistungen</span>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 tracking-tight">
-              Alles, was Ihr Unternehmen braucht
+              Individuelle Software, Automatisierung &amp; IT-Lösungen
             </h1>
             <p className="text-primary-200 text-lg max-w-xl mx-auto">
-              Von der Website bis zur vollständigen Digitalisierung — maßgeschneiderte IT-Lösungen aus einer Hand.
+              Ich entwickle individuelle Anwendungen, automatisiere wiederkehrende Prozesse
+              und verbinde bestehende Systeme miteinander.
             </p>
           </AnimatedSection>
 
@@ -248,17 +252,17 @@ export default function LeistungenPage() {
               <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
               <div className="relative z-10">
                 <h2 className="text-3xl font-bold text-white mb-4">
-                  Welche Leistung interessiert Sie?
+                  Wobei kann ich Sie unterstützen?
                 </h2>
                 <p className="text-primary-200 mb-8 max-w-xl mx-auto">
-                  Vereinbaren Sie ein kostenloses Erstgespräch und wir besprechen gemeinsam,
-                  welche Lösung am besten zu Ihrem Unternehmen passt.
+                  Beschreiben Sie kurz, was Sie benötigen. Ich prüfe Ihre Anfrage und gebe
+                  Ihnen eine erste kostenlose Einschätzung — unverbindlich.
                 </p>
                 <Link
                   to="/kontakt"
                   className="inline-flex items-center gap-2 px-8 py-4 text-primary-700 bg-white font-semibold rounded-xl hover:bg-primary-50 transition-colors shadow-lg"
                 >
-                  Kostenloses Erstgespräch anfragen
+                  Kostenlose erste Einschätzung
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>

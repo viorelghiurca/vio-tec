@@ -13,15 +13,19 @@ import { checkSpam, markSubmitted } from '../lib/spamProtection'
 
 const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY
 
-const subjects = [
-  'KI-Automatisierung',
-  'Website-Erstellung',
-  'Hardware & Software Betreuung',
-  'IT-Support & Systemadministration',
-  'Digitalisierung & Beratung',
-  'Kostenloses Erstgespräch',
-  'Allgemeine Anfrage',
+const needs = [
+  'Software entwickeln',
+  'Prozess automatisieren',
+  'Website',
+  'API / Schnittstelle',
+  'IT-Problem',
   'Sonstiges',
+]
+
+const urgencyOptions = [
+  'kurzfristig',
+  'innerhalb der nächsten Wochen',
+  'noch offen',
 ]
 
 export default function KontaktPage() {
@@ -37,6 +41,13 @@ export default function KontaktPage() {
       return
     }
 
+    if (!WEB3FORMS_KEY) {
+      toast.error('Formular-Versand ist in dieser Umgebung nicht konfiguriert (VITE_WEB3FORMS_KEY fehlt in der .env).')
+      return
+    }
+
+    const bedarf = Array.isArray(data.bedarf) ? data.bedarf.join(', ') : data.bedarf
+
     setIsSubmitting(true)
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -44,13 +55,14 @@ export default function KontaktPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: `Neue Anfrage: ${data.betreff}`,
+          subject: `Neue Anfrage: ${bedarf}`,
           from_name: 'VIO-IT Website',
           name: data.name,
           email: data.email,
           firma: data.firma || '—',
           telefon: data.telefon || '—',
-          betreff: data.betreff,
+          bedarf,
+          dringlichkeit: data.dringlichkeit || 'noch offen',
           nachricht: data.nachricht,
         }),
       })
@@ -75,8 +87,8 @@ export default function KontaktPage() {
   return (
     <>
       <SEOHead
-        title="Kontakt – Jetzt Anfrage stellen"
-        description="Kontaktieren Sie VIO-IT – Viorel Ghiurca. Wir freuen uns auf Ihre Anfrage zu IT-Support, KI-Automatisierung, Websites und Digitalisierung."
+        title="Kontakt – Kostenlose erste Einschätzung anfragen"
+        description="Kontaktieren Sie VIO-IT – Viorel Ghiurca, IHK-geprüfter Fachinformatiker. Beschreiben Sie Ihr Anliegen zu Softwareentwicklung, Automatisierung, APIs, Webentwicklung oder IT-Problemen und erhalten Sie eine kostenlose erste Einschätzung."
         canonical="/kontakt"
       />
 
@@ -86,10 +98,11 @@ export default function KontaktPage() {
           <AnimatedSection>
             <span className="badge bg-white/10 text-primary-200 mb-4">Kontakt</span>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 tracking-tight">
-              Wie kann ich Ihnen helfen?
+              Wobei kann ich Sie unterstützen?
             </h1>
             <p className="text-primary-200 text-lg max-w-xl mx-auto">
-              Stellen Sie mir Ihre Frage oder beschreiben Sie Ihr Anliegen — ich melde mich so schnell wie möglich zurück.
+              Beschreiben Sie kurz, was Sie benötigen. Ich prüfe Ihre Anfrage und gebe Ihnen
+              eine erste kostenlose Einschätzung — unverbindlich.
             </p>
           </AnimatedSection>
         </div>
@@ -151,20 +164,23 @@ export default function KontaktPage() {
                   <div className="w-16 h-16 rounded-full bg-accent-100 flex items-center justify-center mx-auto mb-5">
                     <CheckCircle2 className="w-8 h-8 text-accent-500" />
                   </div>
-                  <h2 className="text-xl font-bold text-neutral-900 mb-2">Nachricht gesendet!</h2>
+                  <h2 className="text-xl font-bold text-neutral-900 mb-2">Anfrage gesendet!</h2>
                   <p className="text-sm text-neutral-500 mb-6">
-                    Vielen Dank! Ich melde mich so schnell wie möglich bei Ihnen zurück.
+                    Vielen Dank für Ihre Anfrage. Ich melde mich schnellstmöglich bei Ihnen.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
                     className="btn-outline"
                   >
-                    Neue Nachricht senden
+                    Neue Anfrage senden
                   </button>
                 </div>
               ) : (
                 <div className="bg-white rounded-2xl shadow-card border border-neutral-100 p-8">
-                  <h2 className="text-xl font-bold text-neutral-900 mb-6">Nachricht senden</h2>
+                  <h2 className="text-xl font-bold text-neutral-900 mb-1">Kostenlose erste Einschätzung</h2>
+                  <p className="text-sm text-neutral-500 mb-6">
+                    Je konkreter Ihre Beschreibung, desto besser kann ich Ihre Anfrage einschätzen.
+                  </p>
 
                   <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                     {/* Honeypot */}
@@ -182,33 +198,36 @@ export default function KontaktPage() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
-                        <label className="input-label">
+                        <label htmlFor="kontakt-name" className="input-label">
                           <User className="w-3.5 h-3.5 inline mr-1.5" />
                           Name *
                         </label>
                         <input
+                          id="kontakt-name"
                           {...register('name', { required: 'Pflichtfeld' })}
                           className="input-field"
                           placeholder="Max Mustermann"
+                          autoComplete="name"
                         />
-                        {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name.message}</p>}
+                        {errors.name && <p className="text-xs text-red-500 mt-1" role="alert">{errors.name.message}</p>}
                       </div>
                       <div>
-                        <label className="input-label">
+                        <label htmlFor="kontakt-firma" className="input-label">
                           <Building2 className="w-3.5 h-3.5 inline mr-1.5" />
                           Firma (optional)
                         </label>
-                        <input {...register('firma')} className="input-field" placeholder="Muster GmbH" />
+                        <input id="kontakt-firma" {...register('firma')} className="input-field" placeholder="Muster GmbH" autoComplete="organization" />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
-                        <label className="input-label">
+                        <label htmlFor="kontakt-email" className="input-label">
                           <Mail className="w-3.5 h-3.5 inline mr-1.5" />
                           E-Mail *
                         </label>
                         <input
+                          id="kontakt-email"
                           {...register('email', {
                             required: 'Pflichtfeld',
                             pattern: { value: /^\S+@\S+\.\S+$/, message: 'Ungültige E-Mail' }
@@ -216,43 +235,76 @@ export default function KontaktPage() {
                           type="email"
                           className="input-field"
                           placeholder="max@firma.de"
+                          autoComplete="email"
                         />
-                        {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email.message}</p>}
+                        {errors.email && <p className="text-xs text-red-500 mt-1" role="alert">{errors.email.message}</p>}
                       </div>
                       <div>
-                        <label className="input-label">
+                        <label htmlFor="kontakt-telefon" className="input-label">
                           <Phone className="w-3.5 h-3.5 inline mr-1.5" />
                           Telefon (optional)
                         </label>
-                        <input {...register('telefon')} type="tel" className="input-field" placeholder="+49 123 456789" />
+                        <input id="kontakt-telefon" {...register('telefon')} type="tel" className="input-field" placeholder="+49 123 456789" autoComplete="tel" />
                       </div>
                     </div>
 
-                    <div>
-                      <label className="input-label">
+                    <fieldset>
+                      <legend className="input-label">
                         <MessageCircle className="w-3.5 h-3.5 inline mr-1.5" />
-                        Betreff *
-                      </label>
-                      <select
-                        {...register('betreff', { required: 'Bitte wählen Sie einen Betreff' })}
-                        className="input-field"
-                      >
-                        <option value="">Thema auswählen…</option>
-                        {subjects.map(s => <option key={s} value={s}>{s}</option>)}
-                      </select>
-                      {errors.betreff && <p className="text-xs text-red-500 mt-1">{errors.betreff.message}</p>}
-                    </div>
+                        Was benötigen Sie? * <span className="font-normal text-neutral-400">(Mehrfachauswahl möglich)</span>
+                      </legend>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-1">
+                        {needs.map(n => (
+                          <label
+                            key={n}
+                            className="flex items-center gap-3 px-4 py-3 bg-neutral-50 border border-neutral-100 rounded-xl cursor-pointer hover:border-primary-200 hover:bg-primary-50/50 transition-colors has-[:checked]:border-primary-300 has-[:checked]:bg-primary-50"
+                          >
+                            <input
+                              type="checkbox"
+                              value={n}
+                              {...register('bedarf', {
+                                validate: v => (v && v.length > 0) || 'Bitte wählen Sie mindestens eine Option',
+                              })}
+                              className="w-4 h-4 rounded border-neutral-300 text-primary-600 focus:ring-primary-500 shrink-0"
+                            />
+                            <span className="text-sm text-neutral-700">{n}</span>
+                          </label>
+                        ))}
+                      </div>
+                      {errors.bedarf && <p className="text-xs text-red-500 mt-2" role="alert">{errors.bedarf.message}</p>}
+                    </fieldset>
 
                     <div>
-                      <label className="input-label">Nachricht *</label>
+                      <label htmlFor="kontakt-nachricht" className="input-label">Was soll gelöst werden? *</label>
                       <textarea
+                        id="kontakt-nachricht"
                         {...register('nachricht', { required: 'Pflichtfeld', minLength: { value: 20, message: 'Bitte etwas mehr beschreiben' } })}
                         rows={5}
                         className="input-field resize-none"
-                        placeholder="Beschreiben Sie kurz Ihr Anliegen oder Ihre Herausforderung…"
+                        placeholder="Beschreiben Sie kurz, welches Problem Sie lösen möchten oder was Ihre Anwendung können soll."
                       />
-                      {errors.nachricht && <p className="text-xs text-red-500 mt-1">{errors.nachricht.message}</p>}
+                      {errors.nachricht && <p className="text-xs text-red-500 mt-1" role="alert">{errors.nachricht.message}</p>}
                     </div>
+
+                    <fieldset>
+                      <legend className="input-label">Wie dringend ist das Projekt?</legend>
+                      <div className="flex flex-col sm:flex-row gap-2 mt-1">
+                        {urgencyOptions.map(u => (
+                          <label
+                            key={u}
+                            className="flex items-center gap-2.5 px-4 py-3 bg-neutral-50 border border-neutral-100 rounded-xl cursor-pointer hover:border-primary-200 hover:bg-primary-50/50 transition-colors has-[:checked]:border-primary-300 has-[:checked]:bg-primary-50 sm:flex-1"
+                          >
+                            <input
+                              type="radio"
+                              value={u}
+                              {...register('dringlichkeit')}
+                              className="w-4 h-4 border-neutral-300 text-primary-600 focus:ring-primary-500 shrink-0"
+                            />
+                            <span className="text-sm text-neutral-700">{u}</span>
+                          </label>
+                        ))}
+                      </div>
+                    </fieldset>
 
                     {/* DSGVO */}
                     <div className="p-4 bg-neutral-50 rounded-xl border border-neutral-100">
@@ -278,7 +330,7 @@ export default function KontaktPage() {
                       disabled={isSubmitting}
                       className="btn-primary w-full justify-center btn-lg disabled:opacity-60"
                     >
-                      {isSubmitting ? 'Wird gesendet…' : 'Nachricht senden'}
+                      {isSubmitting ? 'Wird gesendet…' : 'Anfrage senden'}
                       {!isSubmitting && <Send className="w-4 h-4" />}
                     </button>
                   </form>

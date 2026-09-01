@@ -3,11 +3,11 @@ import { Mail, Phone, MapPin, Linkedin, Github, ExternalLink } from 'lucide-reac
 import BgImage from '../ui/BgImage'
 
 const services = [
-  { label: 'KI-Automatisierung',        to: '/leistungen#ki-automatisierung' },
-  { label: 'Website-Erstellung',         to: '/leistungen#website-erstellung' },
-  { label: 'Hardware & Software',        to: '/leistungen#hardware-software' },
-  { label: 'IT-Support',                 to: '/leistungen#it-support' },
-  { label: 'Digitalisierung',            to: '/leistungen#digitalisierung' },
+  { label: 'Softwareentwicklung',    to: '/leistungen#softwareentwicklung' },
+  { label: 'Automatisierung',        to: '/leistungen#automatisierung' },
+  { label: 'Schnittstellen & APIs',  to: '/leistungen#schnittstellen-apis' },
+  { label: 'Webentwicklung',         to: '/leistungen#webentwicklung' },
+  { label: 'IT-Lösungen',            to: '/leistungen#it-loesungen' },
 ]
 
 const legal = [
@@ -36,8 +36,9 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm leading-relaxed max-w-sm mb-6">
-              Digitale Lösungen für moderne Unternehmen – KI-Automatisierung, professionelle Websites
-              und zuverlässiger IT-Support aus einer Hand.
+              Individuelle Software, Automatisierung &amp; IT-Lösungen für Unternehmen —
+              individuelle Anwendungen, automatisierte Prozesse und Schnittstellen
+              zwischen bestehenden Systemen.
             </p>
             <div className="space-y-2.5">
               <a href="mailto:mail@viorelghiurca.de" className="flex items-center gap-2.5 text-sm hover:text-white transition-colors group">
@@ -90,13 +91,13 @@ export default function Footer() {
 
             <div className="mt-8">
               <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-                Kontakt aufnehmen
+                Wobei kann ich Sie unterstützen?
               </h4>
               <Link
                 to="/kontakt"
                 className="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-white bg-primary-600 rounded-lg hover:bg-primary-500 transition-colors"
               >
-                Nachricht senden
+                Projekt besprechen
                 <ExternalLink className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -106,7 +107,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-neutral-500">
-            © {year} VIO-IT · Viorel Ghiurca · Fachinformatiker & IT-Experte
+            © {year} VIO-IT · Viorel Ghiurca · IHK-geprüfter Fachinformatiker
           </p>
           <div className="flex items-center gap-3 text-xs text-neutral-600">
             <span>Professionelle IT-Lösungen · Made in Germany</span>

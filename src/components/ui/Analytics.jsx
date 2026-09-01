@@ -9,7 +9,7 @@ function Analytics() {
   const { consent } = useCookieConsent();
 
   useEffect(() => {
-    if (consent && consent.analytics) {
+    if (analytics && consent && consent.analytics) {
       logEvent(analytics, 'page_view', {
         page_path: location.pathname + location.search,
       });

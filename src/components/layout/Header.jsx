@@ -44,7 +44,15 @@ export default function Header() {
       <div className="section-container">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group">
+          <Link
+            to="/"
+            onClick={() => {
+              if (location.pathname === '/') {
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+              }
+            }}
+            className="flex items-center gap-2.5 group"
+          >
             <div className="relative">
               <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-600 to-primary-400 flex items-center justify-center shadow-md group-hover:shadow-primary-400/30 group-hover:scale-105 transition-all duration-300">
                 <span className="text-white font-black text-sm tracking-tight">VIO</span>
@@ -82,7 +90,7 @@ export default function Header() {
               to="/kontakt"
               className="group inline-flex items-center gap-2 text-sm font-semibold rounded-xl transition-all duration-300 px-6 py-2.5 text-white border border-white/25 bg-white/10 backdrop-blur-sm hover:bg-white/20 hover:border-white/40"
             >
-              Erstgespräch
+              Projekt besprechen
               <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </div>
@@ -141,7 +149,7 @@ export default function Header() {
           </div>
           <div className="p-4 pt-2 border-t border-neutral-100">
             <Link to="/kontakt" className="btn-primary w-full justify-center">
-              Kostenloses Erstgespräch
+              Kostenlose erste Einschätzung
               <ChevronRight className="w-4 h-4" />
             </Link>
           </div>

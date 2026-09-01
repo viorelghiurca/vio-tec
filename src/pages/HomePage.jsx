@@ -1,8 +1,9 @@
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ChevronRight, Bot, Globe, Server, Headphones, TrendingUp,
-  CheckCircle2, ArrowRight, Shield, Zap, Clock, Star,
-  Users, Award, MessageCircle, ChevronDown
+  ChevronLeft, ChevronRight, Globe, Workflow, Cable, Code2, Wrench,
+  CheckCircle2, ArrowRight, Shield, Zap, Clock,
+  Users, Award, MessageCircle, ChevronDown, Lightbulb
 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import AnimatedSection from '../components/ui/AnimatedSection'
@@ -32,16 +33,16 @@ function Hero() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Headline */}
           <motion.h1
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight text-balance"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight text-balance"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
           >
-            Digitale Lösungen{' '}
+            Individuelle Software,{' '}
             <span className="bg-gradient-to-r from-primary-300 via-primary-200 to-primary-300 bg-clip-text text-transparent">
-              die Ihr Unternehmen
+              Automatisierung
             </span>{' '}
-            voranbringen
+            &amp; IT-Lösungen für Unternehmen
           </motion.h1>
 
           {/* Subline */}
@@ -51,8 +52,8 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.28 }}
           >
-            Von KI-Automatisierung über professionelle Websites bis hin zu zuverlässigem IT-Support —
-            ich bin Ihr persönlicher IT-Partner für nachhaltiges Wachstum.
+            Ich entwickle individuelle Anwendungen, automatisiere wiederkehrende Prozesse
+            und verbinde bestehende Systeme miteinander.
           </motion.p>
 
           {/* CTAs */}
@@ -63,14 +64,14 @@ function Hero() {
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.44 }}
           >
             <Link to="/kontakt" className="btn-primary btn-lg text-base">
-              Kostenloses Erstgespräch
+              Projekt besprechen
               <ChevronRight className="w-5 h-5" />
             </Link>
             <Link
-              to="/leistungen"
+              to="/kontakt"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white border border-white/20 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all duration-200"
             >
-              Leistungen entdecken
+              Sie haben ein IT-Problem?
               <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>
@@ -82,10 +83,10 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.58 }}
           >
-            <TrustPill icon={<CheckCircle2 className="w-4 h-4 text-accent-400" />} text="Ausgebildet & zertifiziert" />
+            <TrustPill icon={<CheckCircle2 className="w-4 h-4 text-accent-400" />} text="IHK-geprüfter Fachinformatiker" />
             <TrustPill icon={<Shield className="w-4 h-4 text-accent-400" />} text="DSGVO-konform" />
             <TrustPill icon={<Zap className="w-4 h-4 text-accent-400" />} text="Schnelle Reaktionszeit" />
-            <TrustPill icon={<Star className="w-4 h-4 text-accent-400" />} text="100% Kundenfokus" />
+            <TrustPill icon={<Users className="w-4 h-4 text-accent-400" />} text="Persönlicher Ansprechpartner" />
           </motion.div>
         </div>
       </div>
@@ -113,44 +114,44 @@ function TrustPill({ icon, text }) {
 // ── Services Overview ─────────────────────────────────────────────────────────
 const services = [
   {
-    icon: <Bot className="w-6 h-6" />,
-    title: 'KI-Automatisierung',
-    desc: 'Wiederholende Prozesse automatisieren und Effizienz durch KI-gestützte Workflows steigern.',
-    to: '/leistungen#ki-automatisierung',
+    icon: <Code2 className="w-6 h-6" />,
+    title: 'Softwareentwicklung',
+    desc: 'Individuelle Anwendungen und interne Firmenlösungen, passend zu Ihren Arbeitsabläufen und Anforderungen.',
+    to: '/leistungen#softwareentwicklung',
     color: 'from-violet-500 to-primary-600',
+    image: '/images/profil-arbeitsplatz.jpg',
+  },
+  {
+    icon: <Workflow className="w-6 h-6" />,
+    title: 'Automatisierung',
+    desc: 'Excel, Dateien, Datenbanken und wiederkehrende Arbeitsabläufe automatisieren und manuelle Arbeit reduzieren.',
+    to: '/leistungen#automatisierung',
+    color: 'from-emerald-500 to-teal-600',
     image: '/images/ki-automatisierung.jpg',
   },
   {
+    icon: <Cable className="w-6 h-6" />,
+    title: 'Schnittstellen & APIs',
+    desc: 'Bestehende Systeme miteinander verbinden und Daten automatisiert zwischen Anwendungen austauschen.',
+    to: '/leistungen#schnittstellen-apis',
+    color: 'from-orange-500 to-amber-600',
+    image: '/images/digitalisierung.jpg',
+  },
+  {
     icon: <Globe className="w-6 h-6" />,
-    title: 'Website-Erstellung',
-    desc: 'Moderne, performante und conversion-optimierte Unternehmenswebsites mit SEO von Anfang an.',
-    to: '/leistungen#website-erstellung',
+    title: 'Webentwicklung',
+    desc: 'Moderne Unternehmenswebsites und individuelle Webanwendungen für unterschiedliche Anforderungen.',
+    to: '/leistungen#webentwicklung',
     color: 'from-primary-500 to-cyan-600',
     image: '/images/webentwicklung.jpg',
   },
   {
-    icon: <Server className="w-6 h-6" />,
-    title: 'Hardware & Software',
-    desc: 'Professionelle Einrichtung, Wartung und Betreuung Ihrer gesamten IT-Infrastruktur.',
-    to: '/leistungen#hardware-software',
-    color: 'from-emerald-500 to-teal-600',
-    image: '/images/server-raum.jpg',
-  },
-  {
-    icon: <Headphones className="w-6 h-6" />,
-    title: 'IT-Support & Admin',
-    desc: 'Zuverlässiger technischer Support für Windows, Linux, Netzwerke und Benutzerverwaltung.',
-    to: '/leistungen#it-support',
-    color: 'from-orange-500 to-amber-600',
-    image: '/images/it-support.jpg',
-  },
-  {
-    icon: <TrendingUp className="w-6 h-6" />,
-    title: 'Digitalisierung',
-    desc: 'Bestehende Prozesse analysieren, optimieren und digitale Lösungen entwickeln, die wirklich helfen.',
-    to: '/leistungen#digitalisierung',
+    icon: <Wrench className="w-6 h-6" />,
+    title: 'IT-Lösungen',
+    desc: 'Technische Unterstützung bei Linux, Servern, Netzwerken, Hardware und individuellen IT-Problemen.',
+    to: '/leistungen#it-loesungen',
     color: 'from-pink-500 to-rose-600',
-    image: '/images/digitalisierung.jpg',
+    image: '/images/it-support.jpg',
   },
 ]
 
@@ -185,10 +186,11 @@ function ServicesOverview() {
       <div className="section-container">
         <AnimatedSection className="text-center mb-16">
           <span className="badge badge-primary mb-4">Leistungen</span>
-          <h2 className="section-title">Alles aus einer Hand</h2>
+          <h2 className="section-title">Womit ich Ihnen helfen kann</h2>
           <p className="section-subtitle mx-auto">
-            Ob Sie eine neue Website benötigen, Prozesse automatisieren oder Ihre IT zuverlässig
-            betreut haben möchten — VIO-IT ist Ihr kompetenter Partner.
+            Ob individuelle Software, Automatisierung wiederkehrender Abläufe, Schnittstellen
+            zwischen Ihren Systemen, eine neue Website oder ein konkretes IT-Problem — hier
+            finden Sie die passende Leistung.
           </p>
         </AnimatedSection>
 
@@ -220,17 +222,51 @@ function ServicesOverview() {
   )
 }
 
+// ── IT-Problem Quick Contact ──────────────────────────────────────────────────
+function ITProblemSection() {
+  return (
+    <section className="section-padding bg-white">
+      <div className="section-container">
+        <AnimatedSection>
+          <div className="relative overflow-hidden rounded-3xl border border-primary-100 bg-primary-50/60 p-8 sm:p-10 lg:p-14">
+            <div className="absolute top-0 right-0 w-72 h-72 bg-primary-100/60 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+            <div className="relative z-10 max-w-2xl">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-primary-100 flex items-center justify-center">
+                  <Lightbulb className="w-5 h-5 text-primary-600" />
+                </div>
+                <span className="badge badge-primary">Unverbindlich anfragen</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 mb-3 tracking-tight">
+                Wobei kann ich Sie unterstützen?
+              </h2>
+              <p className="text-neutral-600 leading-relaxed mb-6">
+                Beschreiben Sie kurz, was Sie benötigen. Ich prüfe Ihre Anfrage und gebe
+                Ihnen eine erste kostenlose Einschätzung.
+              </p>
+              <Link to="/kontakt" className="btn-primary btn-lg">
+                Kostenlose erste Einschätzung
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+  )
+}
+
 // ── Why VIO-IT ────────────────────────────────────────────────────────────────
 const benefits = [
   {
     icon: <Award className="w-5 h-5" />,
-    title: 'Ausgebildet & erfahren',
-    desc: 'Abgeschlossene Ausbildung als Fachinformatiker mit breiter Praxiserfahrung — kein Quereinsteiger, sondern echter Profi.',
+    title: 'IHK-geprüfter Fachinformatiker',
+    desc: 'Abgeschlossene IHK-Ausbildung als Fachinformatiker mit praktischer Erfahrung in Softwareentwicklung, Automatisierung und IT-Betrieb.',
   },
   {
     icon: <Users className="w-5 h-5" />,
     title: 'Persönlicher Ansprechpartner',
-    desc: 'Kein anonymes Call-Center, sondern direkter Kontakt zu Ihrem IT-Experten.',
+    desc: 'Kein anonymes Agentur-Postfach, sondern direkter Kontakt zu der Person, die Ihre Lösung auch umsetzt.',
   },
   {
     icon: <Clock className="w-5 h-5" />,
@@ -244,8 +280,8 @@ const benefits = [
   },
   {
     icon: <Zap className="w-5 h-5" />,
-    title: 'Moderne Technologien',
-    desc: 'Stets auf dem neuesten Stand — von KI-Tools bis zu modernen Web-Frameworks.',
+    title: 'Passende Technologien',
+    desc: 'Von Skript-Automatisierung über Datenbanken bis zu modernen Web-Frameworks — ich wähle das Werkzeug, das zu Ihrem Problem passt.',
   },
   {
     icon: <MessageCircle className="w-5 h-5" />,
@@ -262,12 +298,13 @@ function WhyVioIT() {
           <AnimatedSection direction="left">
             <span className="badge badge-primary mb-4">Warum VIO-IT?</span>
             <h2 className="section-title mb-6">
-              Ihr zuverlässiger IT-Partner für nachhaltigen Erfolg
+              Persönlicher Ansprechpartner statt anonymer Agentur
             </h2>
             <p className="text-neutral-500 leading-relaxed mb-8">
-              Als ausgebildeter Fachinformatiker mit breiter Expertise in modernen Technologien
-              biete ich Ihnen maßgeschneiderte Lösungen, die wirklich funktionieren.
-              Keine Standardpakete, sondern individuelle Betreuung, die zu Ihrem Unternehmen passt.
+              Als IHK-geprüfter Fachinformatiker entwickle ich individuelle Software, automatisiere
+              Abläufe und löse technische Probleme für kleine und mittlere Unternehmen.
+              Sie sprechen direkt mit der Person, die Ihre Lösung umsetzt — ohne Umwege
+              über Projektmanager oder Ticketsysteme.
             </p>
             <div className="relative rounded-2xl overflow-hidden mb-8 shadow-lg">
               <img
@@ -307,8 +344,8 @@ function WhyVioIT() {
 
 // ── Process Steps ─────────────────────────────────────────────────────────────
 const steps = [
-  { step: '01', title: 'Kostenloses Erstgespräch', desc: 'Wir besprechen Ihre Herausforderungen und Ziele – unverbindlich und ohne versteckte Kosten.' },
-  { step: '02', title: 'Analyse & Konzept', desc: 'Ich analysiere Ihre aktuelle Situation und entwickle ein maßgeschneidertes Konzept für Sie.' },
+  { step: '01', title: 'Kostenlose erste Einschätzung', desc: 'Sie beschreiben kurz Ihr Problem oder Vorhaben — ich prüfe die Anfrage und gebe Ihnen eine ehrliche, unverbindliche Einschätzung.' },
+  { step: '02', title: 'Analyse & Konzept', desc: 'Ich analysiere Ihre aktuelle Situation und entwickle ein passendes Konzept für Ihre Anforderungen.' },
   { step: '03', title: 'Umsetzung', desc: 'Professionelle Implementierung mit regelmäßigen Updates und transparenter Kommunikation.' },
   { step: '04', title: 'Support & Weiterentwicklung', desc: 'Langfristige Betreuung, schnelle Hilfe bei Problemen und kontinuierliche Optimierung.' },
 ]
@@ -351,7 +388,185 @@ function HowWeWork() {
   )
 }
 
-// ── Projects Placeholder ──────────────────────────────────────────────────────
+// ── Projects ──────────────────────────────────────────────────────────────────
+// Nur echte, tatsächlich umgesetzte Projekte eintragen — keine erfundenen
+// Kunden, Zahlen oder Ergebnisse.
+const projects = [
+  {
+    title: 'Datenbereinigung & Archivierung im Terabyte-Bereich',
+    problem: 'Über Jahre gewachsene Datenbestände im Terabyte-Bereich belegten Speicherplatz und waren kaum noch überschaubar.',
+    solution: 'Automatisierte Bereinigung und Archivierung nach definierten Regeln — inklusive Protokollierung, damit jeder Schritt nachvollziehbar bleibt.',
+    result: 'Aufgeräumte Datenbestände, freigewordener Speicherplatz und ein wiederholbarer Prozess statt einmaliger Handarbeit.',
+    technologies: ['PowerShell', 'C#', 'Automatisierung'],
+  },
+  {
+    title: 'KI-gestützte Sortierung gescannter Dokumente',
+    problem: 'Gescannte Akten kamen als unsortierte PDFs vom Scanner und mussten von Hand zugeordnet werden.',
+    solution: 'Automatisierte Erkennung und Sortierung der Dokumente mit KI-Unterstützung — die PDFs werden ausgelesen und der richtigen Ablage zugeordnet.',
+    result: 'Deutlich weniger manuelle Sortierarbeit und eine konsistente, nachvollziehbare Ablage.',
+    technologies: ['KI-Texterkennung', 'PDF-Verarbeitung', 'Automatisierung'],
+  },
+  {
+    title: 'Individuelle Zeiterfassung',
+    problem: 'Arbeitszeiten wurden uneinheitlich und mit viel manuellem Aufwand erfasst.',
+    solution: 'Entwicklung von Zeiterfassungsprogrammen, angepasst an die tatsächlichen Abläufe im Betrieb.',
+    result: 'Einheitliche, nachvollziehbare Zeiterfassung ohne Zettelwirtschaft.',
+    technologies: ['Individuelle Software', 'Datenbanken'],
+  },
+  {
+    title: 'Lagerdatenerfassung für Speditionen',
+    problem: 'Lagerbestände — Standardware wie Gefahrgut — mussten manuell erfasst und ermittelt werden.',
+    solution: 'Automatisierte Erfassung und Ermittlung der Lagerdaten, mit getrennter Behandlung von Gefahrgut und regulärer Ware.',
+    result: 'Aktuelle, verlässliche Bestandsdaten ohne manuelle Zählung.',
+    technologies: ['Automatisierung', 'Datenbanken', 'Logistik'],
+  },
+  {
+    title: 'Auftragserfassung im Intranet',
+    problem: 'Aufträge liefen über verschiedene Wege ein und wurden manuell erfasst.',
+    solution: 'Automatisierte Auftragserfassung direkt im Firmen-Intranet — zentral, strukturiert und für alle Beteiligten zugänglich.',
+    result: 'Ein einheitlicher Erfassungsweg und weniger Übertragungsfehler.',
+    technologies: ['Webentwicklung', 'Intranet', 'Datenbanken'],
+  },
+  {
+    title: 'Lobby-Display mit Live-Daten',
+    problem: 'Kennzahlen und Statistiken aus den internen Systemen waren im Haus nicht sichtbar.',
+    solution: 'Automatisiertes Display in der Lobby, das Daten und Statistiken direkt aus den Datenbanken bezieht und aktuell hält.',
+    result: 'Aktuelle Zahlen auf einen Blick — ganz ohne manuelle Pflege.',
+    technologies: ['Datenbanken', 'Dashboard', 'Automatisierung'],
+  },
+  {
+    title: 'Postfach-Überwachung mit Benachrichtigung',
+    problem: 'Volle E-Mail-Postfächer fielen erst auf, wenn keine Nachrichten mehr ankamen.',
+    solution: 'Automatisierte Ermittlung der Postfachgrößen mit rechtzeitiger Benachrichtigung der betroffenen Mitarbeiter.',
+    result: 'Grenzwerte werden früh erkannt — keine überraschend vollen Postfächer mehr.',
+    technologies: ['Skript-Automatisierung', 'E-Mail', 'Monitoring'],
+  },
+]
+
+function ProjectCard({ title, problem, solution, result, technologies }) {
+  return (
+    <div className="card p-6 sm:p-8 h-full flex flex-col">
+      <h3 className="text-lg font-bold text-neutral-900 mb-5 tracking-tight">{title}</h3>
+      <div className="space-y-4 flex-1">
+        <div>
+          <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wide mb-1">Problem</p>
+          <p className="text-sm text-neutral-600 leading-relaxed">{problem}</p>
+        </div>
+        <div>
+          <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wide mb-1">Lösung</p>
+          <p className="text-sm text-neutral-600 leading-relaxed">{solution}</p>
+        </div>
+        <div>
+          <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wide mb-1">Ergebnis</p>
+          <p className="text-sm text-neutral-600 leading-relaxed">{result}</p>
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-2 mt-5 pt-5 border-t border-neutral-100">
+        {technologies.map(t => (
+          <span key={t} className="badge bg-neutral-100 text-neutral-600">{t}</span>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function ProjectsSection() {
+  const trackRef = useRef(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  const scrollToIndex = (i) => {
+    const track = trackRef.current
+    if (!track) return
+    const clamped = Math.max(0, Math.min(projects.length - 1, i))
+    const card = track.children[clamped]
+    if (!card) return
+    // Mobil rasten die Karten mittig ein (snap-center), ab sm linksbündig (snap-start)
+    const isMobile = !window.matchMedia('(min-width: 640px)').matches
+    const left = isMobile
+      ? card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2
+      : card.offsetLeft - track.offsetLeft
+    track.scrollTo({ left, behavior: 'smooth' })
+  }
+
+  const handleScroll = () => {
+    const track = trackRef.current
+    if (!track || track.children.length < 2) return
+    const step = track.children[1].offsetLeft - track.children[0].offsetLeft
+    setActiveIndex(Math.max(0, Math.min(projects.length - 1, Math.round(track.scrollLeft / step))))
+  }
+
+  return (
+    <section className="section-padding bg-white">
+      <div className="section-container">
+        <AnimatedSection className="text-center mb-12">
+          <span className="badge badge-primary mb-4">Aus der Praxis</span>
+          <h2 className="section-title">Umgesetzte Lösungen</h2>
+          <p className="section-subtitle mx-auto">
+            Eine Auswahl umgesetzter Projekte — vom Problem über die Umsetzung bis zum
+            praktischen Nutzen im Arbeitsalltag.
+          </p>
+        </AnimatedSection>
+
+        <AnimatedSection>
+          <div
+            ref={trackRef}
+            onScroll={handleScroll}
+            className="no-scrollbar flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-2 -mx-4 px-[max(7.5vw,calc((100vw_-_400px)/2))] sm:mx-0 sm:px-0"
+          >
+            {projects.map(p => (
+              <div key={p.title} className="snap-center sm:snap-start shrink-0 w-[85vw] max-w-[400px] sm:w-[400px]">
+                <ProjectCard {...p} />
+              </div>
+            ))}
+          </div>
+
+          {/* Controls */}
+          <div className="flex items-center justify-center gap-6 mt-8">
+            <button
+              type="button"
+              onClick={() => scrollToIndex(activeIndex - 1)}
+              disabled={activeIndex === 0}
+              aria-label="Vorheriges Projekt"
+              className="w-10 h-10 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-600 hover:bg-primary-50 hover:border-primary-200 hover:text-primary-600 transition-colors disabled:opacity-30 disabled:pointer-events-none"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <div className="flex items-center gap-2">
+              {projects.map((p, i) => (
+                <button
+                  key={p.title}
+                  type="button"
+                  onClick={() => scrollToIndex(i)}
+                  aria-label={`Projekt ${i + 1} anzeigen`}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    i === activeIndex ? 'w-6 bg-primary-600' : 'w-2 bg-neutral-300 hover:bg-neutral-400'
+                  }`}
+                />
+              ))}
+            </div>
+            <button
+              type="button"
+              onClick={() => scrollToIndex(activeIndex + 1)}
+              disabled={activeIndex === projects.length - 1}
+              aria-label="Nächstes Projekt"
+              className="w-10 h-10 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-600 hover:bg-primary-50 hover:border-primary-200 hover:text-primary-600 transition-colors disabled:opacity-30 disabled:pointer-events-none"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection className="text-center mt-10">
+          <Link to="/kontakt" className="btn-outline btn-lg">
+            Ähnliches Problem? Projekt besprechen
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </AnimatedSection>
+      </div>
+    </section>
+  )
+}
+
 
 // ── FAQ ───────────────────────────────────────────────────────────────────────
 const faqs = [
@@ -360,8 +575,8 @@ const faqs = [
     a: 'Ich arbeite am liebsten mit kleinen und mittelständischen Unternehmen, Selbstständigen und lokalen Betrieben zusammen — also genau den Menschen, die ihre IT in guten Händen wissen möchten, ohne eine große Agentur zu beauftragen.',
   },
   {
-    q: 'Was kostet das Erstgespräch?',
-    a: 'Gar nichts. Das erste Gespräch ist vollständig kostenlos und unverbindlich. Ich höre mir Ihre Situation an, gebe ehrliches Feedback — und wenn es nicht passt, sage ich das auch.',
+    q: 'Was kostet die erste Einschätzung?',
+    a: 'Gar nichts. Die erste Einschätzung ist vollständig kostenlos und unverbindlich. Ich sehe mir Ihre Anfrage an, gebe ehrliches Feedback — und wenn es nicht passt, sage ich das auch.',
   },
   {
     q: 'Wie schnell melden Sie sich bei einem IT-Problem?',
@@ -484,18 +699,18 @@ function CTABanner() {
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary-400/20 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
             <div className="relative z-10">
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 tracking-tight">
-                Bereit für den nächsten Schritt?
+                Lassen Sie uns über Ihr Projekt sprechen
               </h2>
               <p className="text-primary-200 max-w-xl mx-auto mb-8 text-lg">
-                Vereinbaren Sie jetzt Ihr kostenloses Erstgespräch und erfahren Sie,
-                wie VIO-IT Ihr Unternehmen digital voranbringen kann.
+                Beschreiben Sie kurz, was Sie benötigen — Sie erhalten eine ehrliche,
+                kostenlose erste Einschätzung. Unverbindlich und ohne Verpflichtung.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/kontakt"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-primary-700 bg-white rounded-xl hover:bg-primary-50 transition-colors shadow-lg"
                 >
-                  Jetzt Anfrage senden
+                  Kostenlose erste Einschätzung
                   <ChevronRight className="w-5 h-5" />
                 </Link>
                 <Link
@@ -514,19 +729,19 @@ function CTABanner() {
 }
 
 // ── Page Export ───────────────────────────────────────────────────────────────
-import { useState } from 'react'
-
 export default function HomePage() {
   return (
     <>
       <SEOHead
-        description="VIO-IT – Ihr IT-Partner für KI-Automatisierung, Website-Erstellung, IT-Support und Digitalisierung. Viorel Ghiurca, Fachinformatiker & IT-Experte. Kostenloses Erstgespräch."
+        description="VIO-IT – Individuelle Software, Automatisierung & IT-Lösungen für Unternehmen. Softwareentwicklung, Prozessautomatisierung, Schnittstellen & APIs, Webentwicklung. Viorel Ghiurca, IHK-geprüfter Fachinformatiker. Kostenlose erste Einschätzung."
         canonical="/"
       />
       <Hero />
       <ServicesOverview />
+      <ITProblemSection />
       <WhyVioIT />
       <HowWeWork />
+      <ProjectsSection />
       <FAQ />
       <CTABanner />
     </>

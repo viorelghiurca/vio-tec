@@ -2,6 +2,11 @@ import { createContext, useContext, useState, useEffect } from 'react';
 import { analytics } from '../lib/firebase';
 import { setAnalyticsCollectionEnabled } from 'firebase/analytics';
 
+// analytics ist null, wenn Firebase nicht konfiguriert ist (z. B. lokal ohne .env)
+function setAnalyticsEnabled(enabled) {
+  if (analytics) setAnalyticsCollectionEnabled(analytics, enabled);
+}
+
 const CookieContext = createContext(null);
 
 const STORAGE_KEY = 'vio-it-cookie-consent';
@@ -37,30 +42,26 @@ export function CookieProvider({ children }) {
     const stored = loadConsent();
     if (stored) {
       setConsent(stored);
-      if (stored.analytics) {
-        setAnalyticsCollectionEnabled(analytics, true);
-      } else {
-        setAnalyticsCollectionEnabled(analytics, false);
-      }
+      setAnalyticsEnabled(!!stored.analytics);
     } else {
-      setAnalyticsCollectionEnabled(analytics, false);
+      setAnalyticsEnabled(false);
     }
   }, []);
 
   const acceptAll = () => {
-    setAnalyticsCollectionEnabled(analytics, true);
+    setAnalyticsEnabled(true);
     const value = saveConsent({ necessary: true, analytics: true });
     setConsent(value);
   };
 
   const acceptNecessary = () => {
-    setAnalyticsCollectionEnabled(analytics, false);
+    setAnalyticsEnabled(false);
     const value = saveConsent({ necessary: true, analytics: false });
     setConsent(value);
   };
 
   const resetConsent = () => {
-    setAnalyticsCollectionEnabled(analytics, false);
+    setAnalyticsEnabled(false);
     localStorage.removeItem(STORAGE_KEY);
     setConsent(null);
   };
