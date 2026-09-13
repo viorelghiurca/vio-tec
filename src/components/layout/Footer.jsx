@@ -41,9 +41,9 @@ export default function Footer() {
               zwischen bestehenden Systemen.
             </p>
             <div className="space-y-2.5">
-              <a href="mailto:mail@viorelghiurca.de" className="flex items-center gap-2.5 text-sm hover:text-white transition-colors group">
+              <a href="mailto:info@vio-tec.de" className="flex items-center gap-2.5 text-sm hover:text-white transition-colors group">
                 <Mail className="w-4 h-4 text-primary-400 shrink-0" />
-                <span>mail@viorelghiurca.de</span>
+                <span>info@vio-tec.de</span>
               </a>
               <div className="flex items-center gap-2.5 text-sm">
                 <MapPin className="w-4 h-4 text-primary-400 shrink-0" />
@@ -107,7 +107,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-neutral-500">
-            © {year} VIO-IT · Viorel Ghiurca · IHK-geprüfter Fachinformatiker
+            © {year} VIO-TEC · Viorel Ghiurca · IHK-geprüfter Fachinformatiker
           </p>
           <div className="flex items-center gap-3 text-xs text-neutral-600">
             <span>Professionelle IT-Lösungen · Made in Germany</span>

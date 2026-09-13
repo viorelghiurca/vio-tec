@@ -1,20 +1,20 @@
 <div align="center">
 
-<img src="public/favicon.svg" alt="VIO-IT Logo" width="80" height="80" />
+<img src="public/favicon.svg" alt="VIO-TEC Logo" width="80" height="80" />
 
-# VIO-IT
+# VIO-TEC
 
 ### Digitale Lösungen für moderne Unternehmen
 
 **Professionelle Business-Website · React 18 · Vite 6 · Tailwind CSS 3**
 
-[![Deploy](https://github.com/viorelghiurca/vio-it/actions/workflows/deploy.yml/badge.svg)](https://github.com/viorelghiurca/vio-it/actions/workflows/deploy.yml)
+[![Deploy](https://github.com/viorelghiurca/vio-tec/actions/workflows/deploy.yml/badge.svg)](https://github.com/viorelghiurca/vio-tec/actions/workflows/deploy.yml)
 ![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-6.0-646CFF?logo=vite&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?logo=tailwindcss&logoColor=white)
 ![License](https://img.shields.io/badge/Lizenz-Privat-red)
 
-[🌐 Live ansehen](https://it.ghiurcaviorel.de) &nbsp;·&nbsp; [📬 Kontakt](https://it.ghiurcaviorel.de/kontakt)
+[🌐 Live ansehen](https://www.vio-tec.de) &nbsp;·&nbsp; [📬 Kontakt](https://www.vio-tec.de/kontakt)
 
 </div>
 
@@ -22,7 +22,7 @@
 
 ## Überblick
 
-VIO-IT ist die vollständige, produktionsreife Business-Website von **Viorel Ghiurca** — IHK-geprüfter Fachinformatiker mit Fokus auf KI-Automatisierung, Webentwicklung und IT-Support für kleine und mittelständische Unternehmen in Deutschland.
+VIO-TEC ist die vollständige, produktionsreife Business-Website von **Viorel Ghiurca** — IHK-geprüfter Fachinformatiker mit Fokus auf KI-Automatisierung, Webentwicklung und IT-Support für kleine und mittelständische Unternehmen in Deutschland.
 
 Die Website ist auf maximale **Conversion**, **SEO-Performance** und **DSGVO-Konformität** ausgelegt.
 
@@ -66,8 +66,8 @@ CI/CD           GitHub Actions → GitHub Pages
 
 ```bash
 # 1. Repository klonen
-git clone https://github.com/viorelghiurca/vio-it.git
-cd vio-it
+git clone https://github.com/viorelghiurca/vio-tec.git
+cd vio-tec
 
 # 2. Abhängigkeiten installieren
 npm install
@@ -115,8 +115,8 @@ Web3Forms ermöglicht das Empfangen von Kontaktanfragen per E-Mail – **ohne ei
 ```bash
 git init
 git add .
-git commit -m "feat: initial VIO-IT website"
-git remote add origin https://github.com/viorelghiurca/vio-it.git
+git commit -m "feat: initial VIO-TEC website"
+git remote add origin https://github.com/viorelghiurca/vio-tec.git
 git push -u origin main
 ```
 
@@ -142,7 +142,7 @@ Jeder Push auf `main` triggert automatisch einen Build und deployt auf GitHub Pa
 
 **Schritt 1 – Domain in GitHub hinterlegen**
 
-Repository → Settings → Pages → **Custom domain** → `it.ghiurcaviorel.de` → Speichern
+Repository → Settings → Pages → **Custom domain** → `www.vio-tec.de` → Speichern
 
 **Schritt 2 – DNS-Einträge beim Provider setzen**
 
@@ -167,7 +167,7 @@ Repository → Settings → Pages → ✅ **Enforce HTTPS**
 ## Projektstruktur
 
 ```
-vio-it/
+vio-tec/
 │
 ├── .github/
 │   └── workflows/
@@ -195,7 +195,7 @@ vio-it/
 │   │   └── spamProtection.js           # Honeypot + Cooldown-Schutz für Formulare
 │   │
 │   ├── pages/
-│   │   ├── HomePage.jsx                # Startseite: Hero · Services · Why VIO-IT · FAQ · CTA
+│   │   ├── HomePage.jsx                # Startseite: Hero · Services · Why VIO-TEC · FAQ · CTA
 │   │   ├── UeberMichPage.jsx           # Über mich: Bio · Skills · Werte
 │   │   ├── LeistungenPage.jsx          # 5 Leistungsbereiche mit Anchor-Navigation
 │   │   ├── KontaktPage.jsx             # Kontaktformular mit Web3Forms
@@ -246,7 +246,7 @@ npm run lint      # ESLint ausführen
 **Deployment**
 - [ ] `VITE_WEB3FORMS_KEY` als GitHub Secret hinterlegen
 - [ ] GitHub Pages aktivieren (*Source: GitHub Actions*)
-- [ ] Custom Domain `it.ghiurcaviorel.de` in GitHub Pages konfigurieren
+- [ ] Custom Domain `www.vio-tec.de` in GitHub Pages konfigurieren
 - [ ] DNS-Einträge beim Provider setzen
 - [ ] HTTPS erzwingen aktivieren
 
@@ -256,7 +256,7 @@ npm run lint      # ESLint ausführen
 
 ```
 /                           Startseite
-├── /ueber-mich             Über Viorel Ghiurca / VIO-IT
+├── /ueber-mich             Über Viorel Ghiurca / VIO-TEC
 ├── /leistungen             Leistungsübersicht
 │   ├── #ki-automatisierung
 │   ├── #website-erstellung
@@ -273,9 +273,9 @@ npm run lint      # ESLint ausführen
 
 <div align="center">
 
-**VIO-IT · Viorel Ghiurca · IHK-geprüfter Fachinformatiker**
+**VIO-TEC · Viorel Ghiurca · IHK-geprüfter Fachinformatiker**
 
-[it.ghiurcaviorel.de](https://it.ghiurcaviorel.de) · [viorelghiurca.de](https://www.viorelghiurca.de) · [mail@viorelghiurca.de](mailto:mail@viorelghiurca.de)
+[www.vio-tec.de](https://www.vio-tec.de) · [viorelghiurca.de](https://www.viorelghiurca.de) · [info@vio-tec.de](mailto:info@vio-tec.de)
 
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/viorelghiurca)
 

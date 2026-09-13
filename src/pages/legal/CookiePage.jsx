@@ -21,7 +21,7 @@ export default function CookiePage() {
     <>
       <SEOHead
         title="Cookie-Richtlinie"
-        description="Cookie-Richtlinie von VIO-IT – Informationen zur Verwendung von Cookies auf it.ghiurcaviorel.de"
+        description="Cookie-Richtlinie von VIO-TEC – Informationen zur Verwendung von Cookies auf www.vio-tec.de"
         canonical="/cookie-richtlinie"
         noIndex
       />
@@ -119,7 +119,7 @@ export default function CookiePage() {
                         </thead>
                         <tbody>
                           <tr className="border-b border-neutral-50">
-                            <td className="py-2 pr-4 font-mono text-neutral-600">vio-it-cookie-consent</td>
+                            <td className="py-2 pr-4 font-mono text-neutral-600">vio-tec-cookie-consent</td>
                             <td className="py-2 pr-4 text-neutral-500">Speichert Ihre Cookie-Einwilligung (localStorage)</td>
                             <td className="py-2 text-neutral-500">1 Jahr</td>
                           </tr>

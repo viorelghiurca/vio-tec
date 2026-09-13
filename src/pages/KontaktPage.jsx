@@ -56,7 +56,7 @@ export default function KontaktPage() {
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
           subject: `Neue Anfrage: ${bedarf}`,
-          from_name: 'VIO-IT Website',
+          from_name: 'VIO-TEC Website',
           name: data.name,
           email: data.email,
           firma: data.firma || '—',
@@ -78,7 +78,7 @@ export default function KontaktPage() {
       }
     } catch (err) {
       console.error(err)
-      toast.error('Fehler beim Senden. Bitte versuchen Sie es erneut oder schreiben Sie direkt an mail@viorelghiurca.de')
+      toast.error('Fehler beim Senden. Bitte versuchen Sie es erneut oder schreiben Sie direkt an info@vio-tec.de')
     } finally {
       setIsSubmitting(false)
     }
@@ -88,7 +88,7 @@ export default function KontaktPage() {
     <>
       <SEOHead
         title="Kontakt – Kostenlose erste Einschätzung anfragen"
-        description="Kontaktieren Sie VIO-IT – Viorel Ghiurca, IHK-geprüfter Fachinformatiker. Beschreiben Sie Ihr Anliegen zu Softwareentwicklung, Automatisierung, APIs, Webentwicklung oder IT-Problemen und erhalten Sie eine kostenlose erste Einschätzung."
+        description="Kontaktieren Sie VIO-TEC – Viorel Ghiurca, IHK-geprüfter Fachinformatiker. Beschreiben Sie Ihr Anliegen zu Softwareentwicklung, Automatisierung, APIs, Webentwicklung oder IT-Problemen und erhalten Sie eine kostenlose erste Einschätzung."
         canonical="/kontakt"
       />
 
@@ -118,7 +118,7 @@ export default function KontaktPage() {
                 <ContactCard
                   icon={<Mail className="w-5 h-5 text-primary-600" />}
                   title="E-Mail"
-                  content={<a href="mailto:mail@viorelghiurca.de" className="text-sm text-neutral-600 hover:text-primary-600 transition-colors">mail@viorelghiurca.de</a>}
+                  content={<a href="mailto:info@vio-tec.de" className="text-sm text-neutral-600 hover:text-primary-600 transition-colors">info@vio-tec.de</a>}
                 />
                 <ContactCard
                   icon={<MapPin className="w-5 h-5 text-primary-600" />}

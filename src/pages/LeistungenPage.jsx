@@ -193,7 +193,7 @@ export default function LeistungenPage() {
     <>
       <SEOHead
         title="Leistungen – Softwareentwicklung, Automatisierung, APIs & IT-Lösungen"
-        description="VIO-IT Leistungen: Individuelle Softwareentwicklung, Prozessautomatisierung, Schnittstellen & APIs, Webentwicklung und IT-Lösungen für kleine und mittlere Unternehmen."
+        description="VIO-TEC Leistungen: Individuelle Softwareentwicklung, Prozessautomatisierung, Schnittstellen & APIs, Webentwicklung und IT-Lösungen für kleine und mittlere Unternehmen."
         canonical="/leistungen"
       />
 

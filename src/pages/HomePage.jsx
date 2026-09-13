@@ -256,7 +256,7 @@ function ITProblemSection() {
   )
 }
 
-// ── Why VIO-IT ────────────────────────────────────────────────────────────────
+// ── Why VIO-TEC ────────────────────────────────────────────────────────────────
 const benefits = [
   {
     icon: <Award className="w-5 h-5" />,
@@ -296,7 +296,7 @@ function WhyVioIT() {
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <AnimatedSection direction="left">
-            <span className="badge badge-primary mb-4">Warum VIO-IT?</span>
+            <span className="badge badge-primary mb-4">Warum VIO-TEC?</span>
             <h2 className="section-title mb-6">
               Persönlicher Ansprechpartner statt anonymer Agentur
             </h2>
@@ -316,7 +316,7 @@ function WhyVioIT() {
               <div className="absolute inset-0 bg-gradient-to-t from-primary-950/30 to-transparent" />
             </div>
             <Link to="/ueber-mich" className="btn-primary">
-              Mehr über VIO-IT
+              Mehr über VIO-TEC
               <ArrowRight className="w-4 h-4" />
             </Link>
           </AnimatedSection>
@@ -733,7 +733,7 @@ export default function HomePage() {
   return (
     <>
       <SEOHead
-        description="VIO-IT – Individuelle Software, Automatisierung & IT-Lösungen für Unternehmen. Softwareentwicklung, Prozessautomatisierung, Schnittstellen & APIs, Webentwicklung. Viorel Ghiurca, IHK-geprüfter Fachinformatiker. Kostenlose erste Einschätzung."
+        description="VIO-TEC – Individuelle Software, Automatisierung & IT-Lösungen für Unternehmen. Softwareentwicklung, Prozessautomatisierung, Schnittstellen & APIs, Webentwicklung. Viorel Ghiurca, IHK-geprüfter Fachinformatiker. Kostenlose erste Einschätzung."
         canonical="/"
       />
       <Hero />

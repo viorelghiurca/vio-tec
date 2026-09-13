@@ -9,7 +9,7 @@ function setAnalyticsEnabled(enabled) {
 
 const CookieContext = createContext(null);
 
-const STORAGE_KEY = 'vio-it-cookie-consent';
+const STORAGE_KEY = 'vio-tec-cookie-consent';
 const CONSENT_MAX_AGE_MS = 365 * 24 * 60 * 60 * 1000;
 
 function saveConsent(value) {
