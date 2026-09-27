@@ -47,7 +47,7 @@ export default function UeberMichPage() {
     <>
       <SEOHead
         title="Über mich – Viorel Ghiurca, IHK-geprüfter Fachinformatiker"
-        description="Viorel Ghiurca – IHK-geprüfter Fachinformatiker und Gründer von VIO-TEC. Individuelle Softwareentwicklung, Automatisierung, Schnittstellen und IT-Lösungen für kleine und mittlere Unternehmen."
+        description="Viorel Ghiurca – IHK-geprüfter Fachinformatiker und Gründer von Vio-Tec. Individuelle Softwareentwicklung, Automatisierung, Schnittstellen und IT-Lösungen für kleine und mittlere Unternehmen."
         canonical="/ueber-mich"
       />
 
@@ -61,7 +61,7 @@ export default function UeberMichPage() {
               Viorel Ghiurca
             </h1>
             <p className="text-primary-200 text-lg max-w-xl mx-auto">
-              IHK-geprüfter Fachinformatiker · Gründer von VIO-TEC
+              IHK-geprüfter Fachinformatiker · Gründer von Vio-Tec
             </p>
           </AnimatedSection>
         </div>
@@ -105,12 +105,12 @@ export default function UeberMichPage() {
 
               <div className="space-y-4 text-neutral-600 leading-relaxed">
                 <p>
-                  Ich bin Viorel Ghiurca — IHK-geprüfter Fachinformatiker und Gründer von VIO-TEC.
+                  Ich bin Viorel Ghiurca — IHK-geprüfter Fachinformatiker und Gründer von Vio-Tec.
                   Ich entwickle individuelle Software, automatisiere wiederkehrende Prozesse und
                   löse technische Probleme für kleine und mittlere Unternehmen.
                 </p>
                 <p>
-                  Bei VIO-TEC sprechen Sie direkt mit der Person, die Ihre Lösung auch umsetzt.
+                  Bei Vio-Tec sprechen Sie direkt mit der Person, die Ihre Lösung auch umsetzt.
                   Keine Projektmanager dazwischen, keine wechselnden Ansprechpartner — dafür kurze
                   Wege, klare Aussagen und Lösungen, die zu Ihrem Betrieb passen.
                 </p>

@@ -21,7 +21,7 @@ export default function CookiePage() {
     <>
       <SEOHead
         title="Cookie-Richtlinie"
-        description="Cookie-Richtlinie von VIO-TEC – Informationen zur Verwendung von Cookies auf www.vio-tec.de"
+        description="Cookie-Richtlinie von Vio-Tec – Informationen zur Verwendung von Cookies auf www.vio-tec.de"
         canonical="/cookie-richtlinie"
         noIndex
       />

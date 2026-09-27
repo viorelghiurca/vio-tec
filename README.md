@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="public/favicon.svg" alt="VIO-TEC Logo" width="80" height="80" />
+<img src="public/favicon.svg" alt="Vio-Tec Logo" width="80" height="80" />
 
-# VIO-TEC
+# Vio-Tec
 
 ### Digitale Lösungen für moderne Unternehmen
 
@@ -22,7 +22,7 @@
 
 ## Überblick
 
-VIO-TEC ist die vollständige, produktionsreife Business-Website von **Viorel Ghiurca** — IHK-geprüfter Fachinformatiker mit Fokus auf KI-Automatisierung, Webentwicklung und IT-Support für kleine und mittelständische Unternehmen in Deutschland.
+Vio-Tec ist die vollständige, produktionsreife Business-Website von **Viorel Ghiurca** — IHK-geprüfter Fachinformatiker mit Fokus auf KI-Automatisierung, Webentwicklung und IT-Support für kleine und mittelständische Unternehmen in Deutschland.
 
 Die Website ist auf maximale **Conversion**, **SEO-Performance** und **DSGVO-Konformität** ausgelegt.
 
@@ -115,7 +115,7 @@ Web3Forms ermöglicht das Empfangen von Kontaktanfragen per E-Mail – **ohne ei
 ```bash
 git init
 git add .
-git commit -m "feat: initial VIO-TEC website"
+git commit -m "feat: initial Vio-Tec website"
 git remote add origin https://github.com/viorelghiurca/vio-tec.git
 git push -u origin main
 ```
@@ -195,7 +195,7 @@ vio-tec/
 │   │   └── spamProtection.js           # Honeypot + Cooldown-Schutz für Formulare
 │   │
 │   ├── pages/
-│   │   ├── HomePage.jsx                # Startseite: Hero · Services · Why VIO-TEC · FAQ · CTA
+│   │   ├── HomePage.jsx                # Startseite: Hero · Services · Why Vio-Tec · FAQ · CTA
 │   │   ├── UeberMichPage.jsx           # Über mich: Bio · Skills · Werte
 │   │   ├── LeistungenPage.jsx          # 5 Leistungsbereiche mit Anchor-Navigation
 │   │   ├── KontaktPage.jsx             # Kontaktformular mit Web3Forms
@@ -256,7 +256,7 @@ npm run lint      # ESLint ausführen
 
 ```
 /                           Startseite
-├── /ueber-mich             Über Viorel Ghiurca / VIO-TEC
+├── /ueber-mich             Über Viorel Ghiurca / Vio-Tec
 ├── /leistungen             Leistungsübersicht
 │   ├── #ki-automatisierung
 │   ├── #website-erstellung
@@ -273,7 +273,7 @@ npm run lint      # ESLint ausführen
 
 <div align="center">
 
-**VIO-TEC · Viorel Ghiurca · IHK-geprüfter Fachinformatiker**
+**Vio-Tec · Viorel Ghiurca · IHK-geprüfter Fachinformatiker**
 
 [www.vio-tec.de](https://www.vio-tec.de) · [viorelghiurca.de](https://www.viorelghiurca.de) · [info@vio-tec.de](mailto:info@vio-tec.de)
 

@@ -6,7 +6,7 @@ export default function ImpressumPage() {
     <>
       <SEOHead
         title="Impressum"
-        description="Impressum von VIO-TEC – Viorel Ghiurca, Fachinformatiker & IT-Dienstleister."
+        description="Impressum von Vio-Tec – Viorel Ghiurca, Fachinformatiker & IT-Dienstleister."
         canonical="/impressum"
         noIndex
       />
@@ -27,7 +27,7 @@ export default function ImpressumPage() {
 
               <LegalSection title="Angaben gemäß § 5 TMG">
                 <p className="text-neutral-600 text-sm leading-relaxed">
-                  <strong>VIO-TEC</strong><br />
+                  <strong>Vio-Tec</strong><br />
                   Viorel Ghiurca<br />
                   86720 Nördlingen<br />
                   Deutschland

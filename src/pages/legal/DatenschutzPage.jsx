@@ -16,7 +16,7 @@ export default function DatenschutzPage() {
     <>
       <SEOHead
         title="Datenschutzerklärung"
-        description="Datenschutzerklärung von VIO-TEC – DSGVO-konforme Informationen zur Datenverarbeitung."
+        description="Datenschutzerklärung von Vio-Tec – DSGVO-konforme Informationen zur Datenverarbeitung."
         canonical="/datenschutz"
         noIndex
       />
@@ -38,7 +38,7 @@ export default function DatenschutzPage() {
               <LegalSection title="1. Verantwortlicher">
                 <p>
                   Verantwortlicher im Sinne der DSGVO ist:<br /><br />
-                  <strong>VIO-TEC · Viorel Ghiurca</strong><br />
+                  <strong>Vio-Tec · Viorel Ghiurca</strong><br />
                   86720 Nördlingen<br />
                   E-Mail: <a href="mailto:info@vio-tec.de" className="text-primary-600 hover:underline">info@vio-tec.de</a><br />
                   Website: <a href="https://www.vio-tec.de" className="text-primary-600 hover:underline">www.vio-tec.de</a>

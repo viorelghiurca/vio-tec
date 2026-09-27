@@ -56,7 +56,7 @@ export default function KontaktPage() {
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
           subject: `Neue Anfrage: ${bedarf}`,
-          from_name: 'VIO-TEC Website',
+          from_name: 'Vio-Tec Website',
           name: data.name,
           email: data.email,
           firma: data.firma || '—',
@@ -88,7 +88,7 @@ export default function KontaktPage() {
     <>
       <SEOHead
         title="Kontakt – Kostenlose erste Einschätzung anfragen"
-        description="Kontaktieren Sie VIO-TEC – Viorel Ghiurca, IHK-geprüfter Fachinformatiker. Beschreiben Sie Ihr Anliegen zu Softwareentwicklung, Automatisierung, APIs, Webentwicklung oder IT-Problemen und erhalten Sie eine kostenlose erste Einschätzung."
+        description="Kontaktieren Sie Vio-Tec – Viorel Ghiurca, IHK-geprüfter Fachinformatiker. Beschreiben Sie Ihr Anliegen zu Softwareentwicklung, Automatisierung, APIs, Webentwicklung oder IT-Problemen und erhalten Sie eine kostenlose erste Einschätzung."
         canonical="/kontakt"
       />
 

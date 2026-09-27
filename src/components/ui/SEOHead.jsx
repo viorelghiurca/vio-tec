@@ -8,8 +8,8 @@ export default function SEOHead({
   noIndex = false,
 }) {
   const siteUrl = 'https://www.vio-tec.de'
-  const defaultDescription = 'VIO-TEC – Individuelle Software, Automatisierung & IT-Lösungen für Unternehmen. Softwareentwicklung, Prozessautomatisierung, Schnittstellen & APIs, Webentwicklung. Viorel Ghiurca, IHK-geprüfter Fachinformatiker.'
-  const fullTitle = title ? `${title} | VIO-TEC` : 'VIO-TEC – Individuelle Software, Automatisierung & IT-Lösungen für Unternehmen'
+  const defaultDescription = 'Vio-Tec – Individuelle Software, Automatisierung & IT-Lösungen für Unternehmen. Softwareentwicklung, Prozessautomatisierung, Schnittstellen & APIs, Webentwicklung. Viorel Ghiurca, IHK-geprüfter Fachinformatiker.'
+  const fullTitle = title ? `${title} | Vio-Tec` : 'Vio-Tec – Individuelle Software, Automatisierung & IT-Lösungen für Unternehmen'
   const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl
 
   return (
@@ -22,7 +22,7 @@ export default function SEOHead({
       <meta property="og:description" content={description || defaultDescription} />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={fullCanonical} />
-      <meta property="og:site_name" content="VIO-TEC" />
+      <meta property="og:site_name" content="Vio-Tec" />
       <meta property="og:locale" content="de_DE" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />

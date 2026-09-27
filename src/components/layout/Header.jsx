@@ -60,7 +60,7 @@ export default function Header() {
               <div className="absolute -inset-1 rounded-xl bg-primary-400/20 blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
             </div>
             <span className="text-xl font-bold text-white">
-              VIO<span className="text-primary-300">-IT</span>
+              Vio<span className="text-primary-300">-Tec</span>
             </span>
           </Link>
 

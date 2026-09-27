@@ -32,7 +32,7 @@ export default function Footer() {
                 <span className="text-white font-black text-sm tracking-tight">VIO</span>
               </div>
               <span className="text-xl font-bold text-white">
-                VIO<span className="text-primary-400">-IT</span>
+                Vio<span className="text-primary-400">-Tec</span>
               </span>
             </Link>
             <p className="text-sm leading-relaxed max-w-sm mb-6">
@@ -107,7 +107,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-neutral-500">
-            © {year} VIO-TEC · Viorel Ghiurca · IHK-geprüfter Fachinformatiker
+            © {year} Vio-Tec · Viorel Ghiurca · IHK-geprüfter Fachinformatiker
           </p>
           <div className="flex items-center gap-3 text-xs text-neutral-600">
             <span>Professionelle IT-Lösungen · Made in Germany</span>

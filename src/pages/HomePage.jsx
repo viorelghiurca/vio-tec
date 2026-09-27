@@ -256,7 +256,7 @@ function ITProblemSection() {
   )
 }
 
-// ── Why VIO-TEC ────────────────────────────────────────────────────────────────
+// ── Why Vio-Tec ────────────────────────────────────────────────────────────────
 const benefits = [
   {
     icon: <Award className="w-5 h-5" />,
@@ -290,13 +290,13 @@ const benefits = [
   },
 ]
 
-function WhyVioIT() {
+function WhyVioTec() {
   return (
     <section className="section-padding bg-white">
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <AnimatedSection direction="left">
-            <span className="badge badge-primary mb-4">Warum VIO-TEC?</span>
+            <span className="badge badge-primary mb-4">Warum Vio-Tec?</span>
             <h2 className="section-title mb-6">
               Persönlicher Ansprechpartner statt anonymer Agentur
             </h2>
@@ -316,7 +316,7 @@ function WhyVioIT() {
               <div className="absolute inset-0 bg-gradient-to-t from-primary-950/30 to-transparent" />
             </div>
             <Link to="/ueber-mich" className="btn-primary">
-              Mehr über VIO-TEC
+              Mehr über Vio-Tec
               <ArrowRight className="w-4 h-4" />
             </Link>
           </AnimatedSection>
@@ -733,13 +733,13 @@ export default function HomePage() {
   return (
     <>
       <SEOHead
-        description="VIO-TEC – Individuelle Software, Automatisierung & IT-Lösungen für Unternehmen. Softwareentwicklung, Prozessautomatisierung, Schnittstellen & APIs, Webentwicklung. Viorel Ghiurca, IHK-geprüfter Fachinformatiker. Kostenlose erste Einschätzung."
+        description="Vio-Tec – Individuelle Software, Automatisierung & IT-Lösungen für Unternehmen. Softwareentwicklung, Prozessautomatisierung, Schnittstellen & APIs, Webentwicklung. Viorel Ghiurca, IHK-geprüfter Fachinformatiker. Kostenlose erste Einschätzung."
         canonical="/"
       />
       <Hero />
       <ServicesOverview />
       <ITProblemSection />
-      <WhyVioIT />
+      <WhyVioTec />
       <HowWeWork />
       <ProjectsSection />
       <FAQ />
